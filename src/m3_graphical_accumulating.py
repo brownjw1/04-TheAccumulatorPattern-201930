@@ -193,8 +193,6 @@ def draw_lines(n, point, window):
         end = rg.Point(x2, y)
         line = rg.Line(start, end)
         line.attach_to(window)
-        # start=start.x,start.y-30
-        # end=end.x,end.y-30
         y += 30
         line.attach_to(window)
     window.render()

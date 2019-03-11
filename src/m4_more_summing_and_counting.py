@@ -249,6 +249,20 @@ def run_test_count_cosines_from():
     # Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
+    # Test 2:
+    expected = 2
+    answer = count_cosines_from(3, 9, 0.27)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 2
+    count_cosines_from(4, 8, -0.5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+
+
 
 def count_cosines_from(m, n, x):
     """

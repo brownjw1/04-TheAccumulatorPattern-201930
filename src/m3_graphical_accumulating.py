@@ -186,15 +186,16 @@ def draw_lines(n, point, window):
     ###########################################################################
     # -------------------------------------------------------------------------
     x = point.x
-    x2 = point.x + 100
-    y = 200/n
+    x2 = x + 100
+    increment=200/(n-1)
+    y = point.y-100
     for k in range(n):
-        start = rg.Point(x, y)
+        start = point
         end = rg.Point(x2, y)
         line = rg.Line(start, end)
         line.attach_to(window)
-        y += 30
-        line.attach_to(window)
+        #print(end)
+        y+=increment
     window.render()
 
 

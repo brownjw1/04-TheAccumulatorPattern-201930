@@ -147,6 +147,33 @@ def run_test_draw_circles_from_rectangle():
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    title = 'Tests 1 and 2 of DRAW_SQUARES_FROM_CIRCLE: '
+    title = title + ' 7 little squares from green circle, 4 big squares'
+    window1 = rg.RoseWindow(650, 350, title)
+
+    # Test 1:
+    rec = rg.Rectangle(rg.Point(100,100),rg.Point(200,300))
+    rec.fill_color = 'aqua'
+    draw_circles_from_rectangle(7, 5, rec, window1)
+
+    # Test 2:
+    rec = rg.Rectangle(rg.Point(250, 200), rg.Point(600, 250))
+    draw_circles_from_rectangle(2, 20, rec, window1)
+    window1.close_on_mouse_click()
+
+    # -------------------------------------------------------------------------
+    # A third test on ANOTHER window.
+    # -------------------------------------------------------------------------
+    title = 'Test 3 of DRAW_SQUARES_FROM_CIRCLE: '
+    title += ' 20 teeny squares from blue circle!'
+    window2 = rg.RoseWindow(525, 300, title)
+
+    # Test 3:
+    rec = rg.Rectangle(rg.Point(50, 50), rg.Point(500,250))
+    draw_circles_from_rectangle(3, 4, rec, window2)
+
+    window2.close_on_mouse_click()
+
 
 def draw_circles_from_rectangle(m, n, rectangle, window):
     """

@@ -89,6 +89,7 @@ def run_test_sum_from():
     print('Test 4 expected (from formula):', answer_from_formula)
     print('       actual (from my code):  ', answer_from_my_code)
 
+
 # -----------------------------------------------------------------------------
 # DONE: 2.
 #   When you have READ the above  run_test_sum_from  function,
@@ -124,9 +125,9 @@ def sum_from(m, n):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-    sum=0
-    for k in range(n-m+1):
-        sum+=k+m
+    sum = 0
+    for k in range(n - m + 1):
+        sum += k + m
     return sum
 
 
@@ -201,16 +202,16 @@ def factorial(n):
     # IMPORTANT:  Your solution MUST
     #   use an explicit    for ... in range(...):     statement.
     # -------------------------------------------------------------------------
-    total=1
-    for k in range (n):
-        total=total*(k+1)
+    total = 1
+    for k in range(n):
+        total = total * (k + 1)
     return total
 
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # DONE: 6. Implement this TEST function.
     #   It TESTS the  count_cosines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -250,18 +251,34 @@ def run_test_count_cosines_from():
     # -------------------------------------------------------------------------
 
     # Test 2:
-    expected = 2
+    expected = 3
     answer = count_cosines_from(3, 9, 0.27)
-    print('Test 1 expected:', expected)
+    print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 2
+    expected = 4
     count_cosines_from(4, 8, -0.5)
-    print('Test 1 expected:', expected)
+    print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
+    # Test 4:
+    expected = 0
+    count_cosines_from(2, 20, 2)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
 
+    # Test 5:
+    expected = 3
+    count_cosines_from(2, 10, 0)
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 6:
+    expected = 4
+    count_cosines_from(7, 14, .43)
+    print('Test 6 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def count_cosines_from(m, n, x):
@@ -291,6 +308,12 @@ def count_cosines_from(m, n, x):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
+
+    total = 0
+    for k in range(n - m + 1):
+        if math.cos(k + m) > x:
+            total += 1
+    return total
 
 
 def run_test_sum_unit_fractions_from():

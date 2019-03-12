@@ -154,12 +154,15 @@ def run_test_draw_circles_from_rectangle():
     # Test 1:
     rec = rg.Rectangle(rg.Point(400,250),rg.Point(440,325))
     rec.fill_color = 'aqua'
+    rec.outline_color='purple'
+    rec.outline_thickness=5
     draw_circles_from_rectangle(4, 5, rec, window1)
 
     # Test 2:
     rec = rg.Rectangle(rg.Point(600, 400), rg.Point(500, 450))
     rec.fill_color = 'yellow'
-
+    rec.outline_color = 'black'
+    rec.outline_thickness = 7
     draw_circles_from_rectangle(8, 3, rec, window1)
     window1.close_on_mouse_click()
 
@@ -173,6 +176,8 @@ def run_test_draw_circles_from_rectangle():
     # Test 3:
     rec = rg.Rectangle(rg.Point(375, 330), rg.Point(350, 280))
     rec.fill_color = 'purple'
+    rec.outline_color = 'pink'
+    rec.outline_thickness = 2
     draw_circles_from_rectangle(6, 10, rec, window2)
 
     window2.close_on_mouse_click()
@@ -251,6 +256,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     for k in range (n):
         center=rg.Point(x2,y2)
         circle2=rg.Circle(center,width/2)
+        circle2.outline_color=rectangle.outline_color
         circle2.attach_to(window)
         y2-=width
 

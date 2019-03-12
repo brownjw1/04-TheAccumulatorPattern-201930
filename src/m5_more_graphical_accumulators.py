@@ -134,7 +134,7 @@ def run_test_draw_circles_from_rectangle():
     print('--------------------------------------------------')
 
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  draw_circles_from_rectangle  function
     #   defined below.  Include at least **   3   ** tests, of which
     #      ***  at least TWO tests are on ONE window and
@@ -149,16 +149,18 @@ def run_test_draw_circles_from_rectangle():
 
     title = 'Tests 1 and 2 of DRAW_SQUARES_FROM_CIRCLE: '
     title = title + ' 7 little squares from green circle, 4 big squares'
-    window1 = rg.RoseWindow(650, 350, title)
+    window1 = rg.RoseWindow(720, 500, title)
 
     # Test 1:
-    rec = rg.Rectangle(rg.Point(100,100),rg.Point(200,300))
+    rec = rg.Rectangle(rg.Point(400,250),rg.Point(440,325))
     rec.fill_color = 'aqua'
-    draw_circles_from_rectangle(7, 5, rec, window1)
+    draw_circles_from_rectangle(4, 5, rec, window1)
 
     # Test 2:
-    rec = rg.Rectangle(rg.Point(250, 200), rg.Point(600, 250))
-    draw_circles_from_rectangle(2, 20, rec, window1)
+    rec = rg.Rectangle(rg.Point(600, 400), rg.Point(500, 450))
+    rec.fill_color = 'yellow'
+
+    draw_circles_from_rectangle(8, 3, rec, window1)
     window1.close_on_mouse_click()
 
     # -------------------------------------------------------------------------
@@ -166,11 +168,12 @@ def run_test_draw_circles_from_rectangle():
     # -------------------------------------------------------------------------
     title = 'Test 3 of DRAW_SQUARES_FROM_CIRCLE: '
     title += ' 20 teeny squares from blue circle!'
-    window2 = rg.RoseWindow(525, 300, title)
+    window2 = rg.RoseWindow(620, 380, title)
 
     # Test 3:
-    rec = rg.Rectangle(rg.Point(50, 50), rg.Point(500,250))
-    draw_circles_from_rectangle(3, 4, rec, window2)
+    rec = rg.Rectangle(rg.Point(375, 330), rg.Point(350, 280))
+    rec.fill_color = 'purple'
+    draw_circles_from_rectangle(6, 10, rec, window2)
 
     window2.close_on_mouse_click()
 
@@ -228,6 +231,35 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
+
+    rectangle.attach_to(window)
+    width=rectangle.get_width()
+    height=rectangle.get_height()
+    recCenter=rectangle.get_center()
+    x1=recCenter.x-width/2-height/2
+    y1=recCenter.y
+    x2=recCenter.x
+    y2=recCenter.y-height/2-width/2
+
+    for k in range(m):
+        center=rg.Point(x1,y1)
+        circle1=rg.Circle(center,height/2)
+        circle1.fill_color=rectangle.fill_color
+        circle1.attach_to(window)
+        x1-=height
+
+    for k in range (n):
+        center=rg.Point(x2,y2)
+        circle2=rg.Circle(center,width/2)
+        circle2.attach_to(window)
+        y2-=width
+
+
+
+    #cCenterHor=rg.Point(rCenter.x-.5*width,rCenter.y)
+    #cCenterVir=rg.Point(rCenter.x,rCenter.y-.5*height)
+
+    window.render()
 
 
 def run_test_draw_lines_from_rectangles():

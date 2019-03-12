@@ -258,25 +258,25 @@ def run_test_count_cosines_from():
 
     # Test 3:
     expected = 4
-    count_cosines_from(4, 8, -0.5)
+    answer = count_cosines_from(4, 8, -0.5)
     print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 4:
     expected = 0
-    count_cosines_from(2, 20, 2)
+    answer = count_cosines_from(2, 20, 2)
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 5:
     expected = 3
-    count_cosines_from(2, 10, 0)
+    answer = count_cosines_from(2, 10, 0)
     print('Test 5 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 6:
-    expected = 4
-    count_cosines_from(7, 14, .43)
+    expected = 3
+    answer = count_cosines_from(7, 14, .43)
     print('Test 6 expected:', expected)
     print('       actual:  ', answer)
 

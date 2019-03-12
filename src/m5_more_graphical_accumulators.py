@@ -223,7 +223,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -259,12 +259,6 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
         circle2.outline_color=rectangle.outline_color
         circle2.attach_to(window)
         y2-=width
-
-
-
-    #cCenterHor=rg.Point(rCenter.x-.5*width,rCenter.y)
-    #cCenterVir=rg.Point(rCenter.x,rCenter.y-.5*height)
-
     window.render()
 
 
@@ -358,6 +352,38 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ###########################################################################
     # -------------------------------------------------------------------------
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+    x1=rectangle1.get_center().x
+    y1=rectangle1.get_center().y
+    x2 = rectangle2.get_center().x
+    y2 = rectangle2.get_center().y
+    #center2=rectangle2.get_center()
+    #lowerLeftCorner=rectangle1.get_lower_left_corner()
+    #rise= lowerLeftCorner.y-center1.y
+    #run= lowerLeftCorner.x-center1.x
+
+    for k in range(n):
+        start=rg.Point(x1,y1)
+        end=rg.Point(x2,y2)
+        line=rg.Line(start,end)
+        if(k%2==0):
+            line.color=rectangle1.outline_color
+        else:
+            line.color=rectangle2.outline_color
+        #x1+=run
+        #line.start.y+=rise
+        #line.end.x+=run
+        #line.end.y=rise
+        x1=x1-rectangle1.get_width()/2
+        y1=y1+rectangle1.get_height()/2
+        x2 = x2 - rectangle1.get_width() / 2
+        y2 = y2 + rectangle1.get_height() / 2
+
+        line.attach_to(window)
+    window.render()
+
+
 
 
 # -----------------------------------------------------------------------------

@@ -175,8 +175,8 @@ def run_test_draw_circles_from_rectangle():
 
     # Test 3:
     rec = rg.Rectangle(rg.Point(375, 330), rg.Point(350, 280))
-    rec.fill_color = 'purple'
-    rec.outline_color = 'pink'
+    rec.fill_color = 'magenta'
+    rec.outline_color = 'navy'
     rec.outline_thickness = 2
     draw_circles_from_rectangle(6, 10, rec, window2)
 
